@@ -3,21 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RΛMΛN STUDIOS | Games</title>
+    <title>Raman Studios | Official Games</title>
     <style>
-        body { background-color: #000; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; text-align: center; margin: 0; }
-        .card { background: #161616; border: 1px solid #2A2A2A; border-radius: 20px; padding: 30px; max-width: 350px; width: 90%; }
-        h1 { font-size: 32px; letter-spacing: 6px; margin-bottom: 5px; }
-        p { color: #888; font-size: 13px; letter-spacing: 4px; margin-bottom: 30px; }
-        .btn { display: block; background: #fff; color: #000; padding: 14px; border-radius: 12px; font-weight: bold; text-decoration: none; margin-top: 20px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --bg-color: #000000;
+            --surface-color: #0a0a0a;
+            --border-color: #1a1a1a;
+            --accent-color: #cda434; /* Gold/Amber */
+            --text-main: #ffffff;
+            --text-muted: #888888;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 5%;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .brand span { color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 5% 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-color);
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 0 5% 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>RΛMΛN</h1>
-        <p>S T U D I O S</p>
-        <p style="color: #aaa; letter-spacing: normal; font-size: 14px;">Download the official Android APK containing all 10+ minimalist games.</p>
-        <a href="https://github.com/ramanchapagain52-commits/raman-studio-games/releases/download/v1/RamanStudioGames-v1.0.apk" class="btn">Download APK</a>
-    </div>
+
+    <nav>
+        <div class="brand">RΛMΛN <span>STUDIOS</span></div>
+        <div style="font-size: 14px; color: var(--text-muted);">v1.0 Live</div>
+    </nav>
+
+    <main class="hero">
+        <h1>Minimalist gaming.<br>Maximum performance.</h1>
+        <p>Download the official Raman Studios application. Experience classic arcade and puzzle games natively engineered for Android.</p>
+        
+        <div class="btn-container">
+            <a href="https://github.com/ramanchapagain52-commits/raman-studio-games/releases/download/v1/RamanStudioGames-v1.0.apk" class="btn btn-primary">
+                Download for Android (11.7 MB)
+            </a>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>11-in-1 Collection</h3>
+            <p>From 2048 to Minesweeper, all your favorite classics unified in a single, lightweight application.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Pitch-Black UI</h3>
+            <p>Designed specifically for OLED displays. High contrast, battery-efficient, and easy on the eyes.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Pure Gameplay</h3>
+            <p>Zero advertisements, zero bloatware, and no microtransactions. Just pure, uninterrupted gaming.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Raman Studios.
+    </footer>
+
 </body>
 </html>
